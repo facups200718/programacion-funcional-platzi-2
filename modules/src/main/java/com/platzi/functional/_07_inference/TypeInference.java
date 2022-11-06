@@ -11,10 +11,10 @@ public class TypeInference {
                 x -> "Times 2: " + x * 2;
 
         List<String> students = NamesUtils.getList("Hugo", "Paco", "Luis");
-        //Esto es lo que hace java por adentro, indicando cual es el tipo a parsear para el valor que enviamos
+        //Ya no tenemos que hacer esto, aclarar el tipo del dato que se está enviando
         students.forEach((String name) -> System.out.println(name));
 
-        //Esto es lo que se suele escribir. La inferencia de tipos es automatica
+        //Sino que ahora no se aclara (ver estos 2 ejemplos), y Java se encarga de comparar el tipo del dato enviado y del dato esperado en tiempo de compilación
         students.forEach(name -> System.out.println(name));
         students.forEach(System.out::println);
     }
