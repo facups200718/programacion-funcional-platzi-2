@@ -13,5 +13,7 @@ public class MathOperations {
         //Con esto agregamos una funcion que se ejecuta posteriormente a la funcion lambda en la variable addOneThenTimesThree
         Function<Integer,Integer> andSquare = addOneThenTimesThree.andThen(x -> x * x);
         System.out.println(andSquare.apply(2));
+
+        //Esto puede servir para agregar/verificar que haya una conexion de bd antes de realizar una consulta
     }
 }
