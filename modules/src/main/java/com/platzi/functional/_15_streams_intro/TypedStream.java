@@ -1,5 +1,7 @@
 package com.platzi.functional._15_streams_intro;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class TypedStream {
@@ -16,5 +18,11 @@ public class TypedStream {
                 .parallel() //Distribuye la tarea en varios hilos, esto es cuando tenemos un gran volumen de datos y NO nos importa el orden de los mismos
                 .filter(x -> x % 2 == 0)
                 .forEach(System.out::println);
+
+        IntStream infiniteStream3 = IntStream.iterate(0, x -> x + 1);
+        List<Integer> numbersList = infiniteStream3.limit(1000)
+                .filter(x -> x % 2 == 0)
+                .boxed() //Devuelve un Stream<Integer>
+                .collect(Collectors.toList()); //Convertimos a una List<Integer>, esto es una operacion terminal
     }
 }
